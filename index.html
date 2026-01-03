@@ -17,6 +17,8 @@
     .card { background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(15,23,42,0.06); padding: 18px; border: 1px solid rgba(0,0,0,0.04); }
     a.gold { color: var(--gold); }
     button.gold { background: linear-gradient(180deg,var(--gold),var(--accent)); color: white; border-radius: 8px; padding: 8px 14px; }
+    .transition-hover { transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 12px 24px rgba(15,23,42,0.12); }
   </style>
 </head>
 <body class="bg-white text-neutral-900">
@@ -25,138 +27,131 @@
     <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="font-semibold tracking-wide text-lg">Shweta &amp; Ramiz</a>
       <nav class="hidden sm:flex gap-6 text-sm muted">
-        <a href="#story" class="hover:text-[var(--gold)]">Our Story</a>
-        <a href="#locations" class="hover:text-[var(--gold)]">Locations</a>
-        <a href="#photos" class="hover:text-[var(--gold)]">Photos</a>
-        <a href="#faq" class="hover:text-[var(--gold)]">FAQ</a>
-        <a href="#rsvp" class="px-3 py-1 rounded-full button gold">RSVP</a>
+        <a href="#story" class="hover:text-[var(--gold)] transition-hover">Our Story</a>
+        <a href="#location" class="hover:text-[var(--gold)] transition-hover">Location</a>
+        <a href="#photos" class="hover:text-[var(--gold)] transition-hover">Photos</a>
+        <a href="#faq" class="hover:text-[var(--gold)] transition-hover">FAQ</a>
+        <a href="#rsvp" class="px-3 py-1 rounded-full button gold transition-hover">RSVP</a>
       </nav>
-      <button id="playSong" class="text-sm muted" aria-label="Play song">Play song</button>
     </div>
   </header>
 
-  <audio id="bgSong" preload="none">
-    <source src="/audio/placeholder.wav" type="audio/wav" />
-  </audio>
-
   <main class="max-w-5xl mx-auto">
 
-    <section id="home" class="text-center py-20 px-4">
-      <p class="uppercase tracking-[0.3em] text-xs muted">We're getting married</p>
-      <h1 class="mt-4 text-5xl font-semibold">Shweta &amp; Ramiz</h1>
-      <p class="muted">Reception Lunch — 21 March 2026 • Villa Anna</p>
-      <div class="mt-6 flex justify-center gap-3">
-        <a href="#ourstory" class="px-4 py-2 rounded border card">Our story</a>
-        <a href="#locations" class="px-4 py-2 rounded gold" style="padding:10px 16px; background:transparent; border:1px solid rgba(0,0,0,0.04)">Locations</a>
+    <section id="home" class="relative text-center px-4 overflow-hidden">
+      <div class="relative h-96 -mx-4 mb-0" style="background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);">
+        <img src="images/hero-photo.jpg" class="w-full h-full object-cover absolute top-0 left-0" alt="Shweta and Ramiz">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
       </div>
-    </section>
-
-    <section id="ourstory" class="px-4 py-12">
-      <div class="card">
-        <h2 class="text-2xl font-semibold">Our Story</h2>
-        <p class="mt-4 muted">We first saw each other in a hallway — a brief greeting that somehow lingered. A few days later we were seated together at the department Christmas lunch. Conversations that began over coffee and fika quietly became the reason we looked forward to small, ordinary days. By March we called it our first official date. Since then, long walks, shared playlists and easy laughter made it clear: we were building something gentle and true. We can’t wait to celebrate this with you.</p>
-      </div>
-    </section>
-
-    <section id="locations" class="px-4 py-12">
-      <h2 class="text-2xl font-semibold text-center">Locations</h2>
-      <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <div class="card">
-          <img src="images/uppsala-city-hall.jpg" class="w-full h-56 object-cover rounded-lg" alt="Uppsala City Hall">
-          <h3 class="mt-4 text-lg font-semibold">Uppsala City Hall</h3>
-          <p class="muted">Wedding ceremony — 6 Dec 2025 • 12:15<br><span class="text-xs muted">Room will be confirmed closer to the date.</span></p>
-          <div class="mt-3"><a class="gold" href="https://www.google.com/maps/search/?api=1&query=Uppsala+City+Hall" target="_blank" rel="noreferrer">Open in maps</a></div>
+      <div class="pt-12 pb-8">
+        <p class="uppercase tracking-[0.3em] text-xs muted">We're celebrating</p>
+        <h1 class="mt-4 text-5xl font-semibold">Shweta &amp; Ramiz</h1>
+        <p class="muted mt-2">Reception Lunch — 21 March 2026 • Villa Anna</p>
+        <div class="mt-8 flex justify-center">
+          <a href="#rsvp" class="px-6 py-3 rounded" style="background: linear-gradient(180deg,var(--gold),var(--accent)); color: white; cursor: pointer; font-weight: 600;">RSVP Now</a>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-          <img src="images/villa-anna.jpg" class="w-full h-56 object-cover rounded-lg" alt="Villa Anna">
-          <h3 class="mt-4 text-lg font-semibold">Villa Anna</h3>
-          <p class="muted">Reception lunch — 21 Mar 2026 • Lunch</p>
-          <div class="mt-3"><a class="gold" href="https://www.google.com/maps/search/?api=1&query=Villa+Anna+Uppsala" target="_blank" rel="noreferrer">Open in maps</a></div>
+    <section id="story" class="px-4 py-12">
+      <div class="card transition-hover">
+        <h2 class="text-2xl font-semibold">Our Story</h2>
+        <p class="mt-4 muted">We first saw each other in a hallway — a brief greeting that somehow lingered. A few days later we were seated together at the department Christmas lunch. Conversations that began over coffee and fika quietly became the reason we looked forward to small, ordinary days. By March we called it our first official date. Since then, long walks, shared playlists and easy laughter made it clear: we were building something gentle and true. We can't wait to celebrate this with you.</p>
+      </div>
+    </section>
+
+    <section id="location" class="px-4 py-12">
+      <h2 class="text-2xl font-semibold text-center mb-6">Reception Location</h2>
+      <div class="max-w-2xl mx-auto">
+        <div class="card transition-hover">
+          <img src="images/villa-anna.jpg" class="w-full h-64 object-cover rounded-lg" alt="Villa Anna">
+          <h3 class="mt-4 text-xl font-semibold">Villa Anna</h3>
+          <p class="muted mt-2">Reception Lunch<br><span class="text-sm">21 March 2026 • Lunch time</span></p>
+          <div class="mt-4"><a class="gold font-semibold" href="https://www.google.com/maps/search/?api=1&query=Villa+Anna+Uppsala" target="_blank" rel="noreferrer">📍 Open in maps</a></div>
         </div>
       </div>
     </section>
 
     <section id="photos" class="px-4 py-12">
-      <h2 class="text-2xl font-semibold text-center">Photos</h2>
+      <h2 class="text-2xl font-semibold text-center mb-6">Photos</h2>
       <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="photos/photo1.jpg" class="rounded-lg w-full h-48 object-cover" alt="photo1">
-        <img src="photos/photo2.jpg" class="rounded-lg w-full h-48 object-cover" alt="photo2">
-        <img src="photos/photo3.jpg" class="rounded-lg w-full h-48 object-cover" alt="photo3">
+        <img src="photos/photo1.jpg" class="rounded-lg w-full h-48 object-cover transition-hover hover:shadow-lg" alt="photo1">
+        <img src="photos/photo2.jpg" class="rounded-lg w-full h-48 object-cover transition-hover hover:shadow-lg" alt="photo2">
+        <img src="photos/photo3.jpg" class="rounded-lg w-full h-48 object-cover transition-hover hover:shadow-lg" alt="photo3">
       </div>
     </section>
 
     <section id="faq" class="px-4 py-12">
-      <h2 class="text-2xl font-semibold text-center">FAQ</h2>
+      <h2 class="text-2xl font-semibold text-center mb-6">FAQ</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6 muted">
-        <div class="card">
-          <h4 class="font-semibold">Do I need to RSVP for the wedding ceremony?</h4>
-          <p class="mt-2">No — RSVPs are <strong>only</strong> required for the reception lunch on 21 March 2026. The ceremony is listed here for information only.</p>
+        <div class="card transition-hover">
+          <h4 class="font-semibold text-neutral-900">When should I RSVP?</h4>
+          <p class="mt-2">Please RSVP by <strong>31 January 2026</strong>. This helps us plan catering and seating arrangements for the reception.</p>
         </div>
-        <div class="card">
-          <h4 class="font-semibold">Can I bring a +1?</h4>
+        <div class="card transition-hover">
+          <h4 class="font-semibold text-neutral-900">Can I bring a +1?</h4>
           <p class="mt-2">No—we ask that each guest RSVP individually. If you wish to bring a child, they must have their own RSVP entry as well.</p>
         </div>
-        <div class="card">
-          <h4 class="font-semibold">Dietary options</h4>
+        <div class="card transition-hover">
+          <h4 class="font-semibold text-neutral-900">Dietary options</h4>
           <p class="mt-2">We are offering two meal options: <strong>Meat</strong> and <strong>Vegan</strong>. There is also a free-text field to list any specific dietary restrictions or allergies.</p>
         </div>
-        <div class="card">
-          <h4 class="font-semibold">Drink preferences</h4>
+        <div class="card transition-hover">
+          <h4 class="font-semibold text-neutral-900">Drink preferences</h4>
           <p class="mt-2">Please indicate whether you prefer alcoholic or non‑alcoholic drinks on your RSVP.</p>
         </div>
       </div>
     </section>
 
     <section id="rsvp" class="px-4 py-16">
-      <div class="card max-w-2xl mx-auto">
-        <h2 class="text-2xl font-semibold text-center">RSVP — Reception Lunch (21 March 2026)</h2>
-        <p class="mt-2 text-center muted">Please respond by <strong>31 January 2026</strong>.</p>
+      <div class="card max-w-2xl mx-auto transition-hover">
+        <h2 class="text-2xl font-semibold text-center">RSVP — Reception Lunch</h2>
+        <p class="mt-2 text-center muted">21 March 2026 • Please respond by <strong>31 January 2026</strong></p>
 
         <form id="rsvpForm" action="https://formspree.io/f/xvzgazpr" method="POST" class="mt-6 grid gap-3">
 
-          <label class="text-sm">Full name <span style="color:#b91c1c">*</span></label>
-          <input name="name" required class="w-full rounded border px-3 py-2" />
+          <label class="text-sm font-medium">Full name <span style="color:#b91c1c">*</span></label>
+          <input name="name" required class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);" />
 
-          <label class="text-sm">Email <span style="color:#b91c1c">*</span></label>
-          <input name="email" type="email" required class="w-full rounded border px-3 py-2" />
+          <label class="text-sm font-medium">Email <span style="color:#b91c1c">*</span></label>
+          <input name="email" type="email" required class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);" />
 
-          <label class="text-sm">Will you attend the reception lunch? <span style="color:#b91c1c">*</span></label>
-          <select name="attending" required class="w-full rounded border px-3 py-2">
+          <label class="text-sm font-medium">Will you attend the reception lunch? <span style="color:#b91c1c">*</span></label>
+          <select name="attending" required class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);">
             <option value="">Select…</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
 
-          <label class="text-sm">Meal preference <span style="color:#b91c1c">*</span></label>
-          <select name="meal" required class="w-full rounded border px-3 py-2">
+          <label class="text-sm font-medium">Meal preference <span style="color:#b91c1c">*</span></label>
+          <select name="meal" required class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);">
             <option value="Meat">Meat</option>
             <option value="Vegan">Vegan</option>
           </select>
 
-          <label class="text-sm">Dietary restrictions (write allergies or other needs)</label>
-          <input name="restrictions" placeholder="e.g. nut allergy, gluten-free" class="w-full rounded border px-3 py-2" />
+          <label class="text-sm font-medium">Dietary restrictions (write allergies or other needs)</label>
+          <input name="restrictions" placeholder="e.g. nut allergy, gluten-free" class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);" />
 
-          <label class="text-sm">Drink preference <span style="color:#b91c1c">*</span></label>
-          <select name="drink" required class="w-full rounded border px-3 py-2">
+          <label class="text-sm font-medium">Drink preference <span style="color:#b91c1c">*</span></label>
+          <select name="drink" required class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);">
             <option value="">Select…</option>
             <option value="Alcohol">Alcohol</option>
             <option value="Non-alcoholic">Non-alcoholic</option>
           </select>
 
-          <label class="text-sm">Message (optional)</label>
-          <textarea name="message" rows="3" class="w-full rounded border px-3 py-2"></textarea>
+          <label class="text-sm font-medium">Message (optional)</label>
+          <textarea name="message" rows="3" class="w-full rounded border px-3 py-2 focus:outline-none focus:ring-2" style="focus:ring-color:var(--gold); border-color:rgba(0,0,0,0.1);"></textarea>
 
           <label class="inline-flex items-start gap-2 text-xs muted">
             <input type="checkbox" required name="consent" class="mt-1" /> I consent to my RSVP information being collected for event planning purposes.
           </label>
 
-          <div class="mt-3 flex justify-center">
-            <button type="submit" class="gold">Submit RSVP</button>
+          <div class="mt-4 flex justify-center">
+            <button type="submit" class="gold font-semibold transition-hover">Submit RSVP</button>
           </div>
 
-          <p id="rsvpSuccess" class="hidden text-sm text-green-700 text-center">Thank you — your RSVP has been sent.</p>
-          <p id="rsvpError" class="hidden text-sm text-red-700 text-center">Something went wrong. Please try again or email us.</p>
+          <p id="rsvpSuccess" class="hidden text-sm text-green-700 text-center font-medium">✓ Thank you — your RSVP has been sent.</p>
+          <p id="rsvpError" class="hidden text-sm text-red-700 text-center font-medium">✗ Something went wrong. Please try again or email us.</p>
         </form>
 
       </div>
@@ -177,21 +172,22 @@
     const error = document.getElementById('rsvpError');
     form.addEventListener('submit', async function(e){ 
       e.preventDefault();
-      success.classList.add('hidden'); error.classList.add('hidden');
+      success.classList.add('hidden'); 
+      error.classList.add('hidden');
       const data = new FormData(form);
       try {
         const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data });
-        if (res.ok) { success.classList.remove('hidden'); form.reset(); window.scrollTo({top: success.offsetTop - 80, behavior:'smooth'}); }
-        else { error.classList.remove('hidden'); }
-      } catch (e) { error.classList.remove('hidden'); }
-    });
-
-    // Play/pause song (user must click due to browser rules)
-    const playBtn = document.getElementById('playSong');
-    const audio = document.getElementById('bgSong');
-    playBtn && playBtn.addEventListener('click', async () => {
-      if (audio.paused) { try { await audio.play(); playBtn.textContent = 'Pause song'; } catch(e){ alert('Play blocked by browser — click allow or try again.'); } }
-      else { audio.pause(); playBtn.textContent = 'Play song'; }
+        if (res.ok) { 
+          success.classList.remove('hidden'); 
+          form.reset(); 
+          window.scrollTo({top: success.offsetTop - 80, behavior:'smooth'}); 
+        }
+        else { 
+          error.classList.remove('hidden'); 
+        }
+      } catch (e) { 
+        error.classList.remove('hidden'); 
+      }
     });
   </script>
 </body>
